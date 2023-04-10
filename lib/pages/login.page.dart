@@ -12,9 +12,8 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Entrar"),
-        automaticallyImplyLeading: false,
-        backgroundColor: Theme.of(context).primaryColor,
-      ),      
+        //automaticallyImplyLeading: false,
+        backgroundColor: Theme.of(context).primaryColor,),     
       body: SingleChildScrollView(
         child: Container(
           width: double.infinity,

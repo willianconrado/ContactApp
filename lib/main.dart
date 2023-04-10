@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/pages/tabs.page.dart';
-import 'package:flutter_app/themes/dark.theme.dart';
-import 'package:flutter_app/themes/light.theme.dart';
-import 'package:flutter_app/themes/purple.theme.dart';
+import 'package:flutter_app/pages/home.page.dart';
+import 'themes/purple.theme.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -15,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: darkPurpleTheme(),
       home: DefaultTabController(
         length: 2,
-        child: TabsPage(),
+        child: HomePage(),
       ),
     );
   }

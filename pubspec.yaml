@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.18.6 <3.0.0'
+  sdk: '>=2.12.0 <3.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -36,7 +36,11 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   sqflite: ^2.0.3+1
-  path:
+  provider: 3.1.0+1
+  flare_flutter: ^3.0.2
+  firebase_core: ^2.9.0
+  cloud_firestore: ^4.5.0
+  uuid: ^3.0.7
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +68,9 @@ flutter:
   assets:
      - assets/facebook.png
      - assets/google.png
+     - assets/work.png
+     - assets/work_1.png
+     - assets/toemater.riv
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

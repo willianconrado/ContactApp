@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/themes/dark.theme.dart';
 
 abstract class cadastro extends StatefulWidget {
   final String nome;
@@ -18,7 +17,7 @@ class SignupPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Cadastre-se'),
-        backgroundColor: primaryColor,
+        backgroundColor: Theme.of(context).primaryColor,
       ),
       body: SingleChildScrollView(
           child: Column(
@@ -40,7 +39,7 @@ class SignupPage extends StatelessWidget {
                   ],
                 ),
                 child: Padding(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                     left: 15,
                     right: 15,
                     top: 15,
@@ -124,6 +123,7 @@ class SignupPage extends StatelessWidget {
                             ),
                           ),
                           onPressed: () {
+                            Navigator.pop(context);
                             //função que ira gravar no banco de dados
                           },
                         ),
