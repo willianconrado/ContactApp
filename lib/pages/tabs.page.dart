@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/pages/highlights.dart';
-import 'package:flutter_app/pages/home.page.dart';
+import 'home_screen.dart';
+import 'login.page.dart';
 
 class TabsPage extends StatelessWidget {
   const TabsPage({Key? key}) : super(key: key);
@@ -10,8 +10,8 @@ class TabsPage extends StatelessWidget {
     return Scaffold(
       body: TabBarView(
         children: [
-          HomePage(),
-          Highligts(),
+          const HomeScreen(),
+          LoginPage(),
         ],
       ),
       bottomNavigationBar: TabBar(
@@ -20,7 +20,7 @@ class TabsPage extends StatelessWidget {
             icon: Icon(Icons.home),
           ),
           Tab(
-            icon: Icon(Icons.newspaper_sharp),
+            icon: Icon(Icons.person),
           ),
         ],
         labelColor: Theme.of(context).primaryColor,

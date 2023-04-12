@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home.page.dart';
+import 'home_screen.dart';
 import 'tabs.page.dart';
 
 class AnimatedScreen extends StatelessWidget {
@@ -13,7 +13,7 @@ class AnimatedScreen extends StatelessWidget {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => HomePage(),
+          builder: (context) => HomeScreen(),
         ),
       );
     });

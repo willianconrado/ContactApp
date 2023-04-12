@@ -5,7 +5,7 @@ const primaryColor = Color.fromARGB(255, 204, 0, 255);
 const lightColor = const Color(0xFFFFFFFF);
 const backgroundColor = const Color(0xFFF5F5F5);
 
-ThemeData darkPurpleTheme() {
+ThemeData purpleTheme() {
   return ThemeData(
     // primarySwatch: primaryColor,
     brightness: brightness,
