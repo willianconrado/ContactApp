@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 const brightness = Brightness.dark;
 const primaryColor = Color.fromARGB(255, 204, 0, 255);
-const lightColor = const Color(0xFFFFFFFF);
-const backgroundColor = const Color(0xFFF5F5F5);
+const lightColor =  Color(0xFFFFFFFF);
+const backgroundColor =  Color(0xFFF5F5F5);
 
 ThemeData purpleTheme() {
   return ThemeData(
-    // primarySwatch: primaryColor,
+    //primarySwatch: primaryColor,
     brightness: brightness,
     // textTheme: new TextTheme(
     //   body1: new TextStyle(color: Colors.red),

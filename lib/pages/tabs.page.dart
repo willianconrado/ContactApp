@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
 import 'login.page.dart';
 
 class TabsPage extends StatelessWidget {
@@ -8,9 +7,10 @@ class TabsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).primaryColor,
       body: TabBarView(
         children: [
-          const HomeScreen(),
+          //HomeScreen(),
           LoginPage(),
         ],
       ),

@@ -38,9 +38,12 @@ dependencies:
   sqflite: ^2.0.3+1
   provider: 3.1.0+1
   flare_flutter: ^3.0.2
-  firebase_core: ^2.9.0
+  firebase_core: ^2.10.0
   cloud_firestore: ^4.5.0
   uuid: ^3.0.7
+  firebase_auth: ^4.4.2
+  google_sign_in: ^5.2.1
+  rive: ^0.10.4
 
 dev_dependencies:
   flutter_test:
@@ -68,9 +71,7 @@ flutter:
   assets:
      - assets/facebook.png
      - assets/google.png
-     - assets/work.png
-     - assets/work_1.png
-     - assets/toemater.riv
+     - assets/perrito.riv
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

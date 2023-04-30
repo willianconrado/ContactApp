@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 const brightness = Brightness.light;
-const primaryColor = const Color(0xFF00C569);
-const lightColor = const Color(0xFFFFFFFF);
-const backgroundColor = const Color(0xFFF5F5F5);
+const primaryColor =  Color.fromARGB(255, 220, 194, 117);
+const lightColor =  Color.fromARGB(255, 255, 255, 255);
+const backgroundColor =  Color.fromARGB(255, 4, 73, 39);
 
 ThemeData lightTheme() {
   return ThemeData(
-    // primarySwatch: primaryColor,
+     //primarySwatch: primaryColor,
     brightness: brightness,
     // textTheme: new TextTheme(
     //   body1: new TextStyle(color: Colors.red),

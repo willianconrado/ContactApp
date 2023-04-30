@@ -47,30 +47,30 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyADYUoZwgVf-ZUaqX7TtZspc-nHWP1oAd4',
-    appId: '1:550746434079:web:e36cc4893fcc7ed3fc832a',
-    messagingSenderId: '550746434079',
-    projectId: 'flutter-app-firebas',
-    authDomain: 'flutter-app-firebas.firebaseapp.com',
-    storageBucket: 'flutter-app-firebas.appspot.com',
-    measurementId: 'G-S4GYTX5PT0',
+    apiKey: 'AIzaSyAi3r9xfXE7SgKeDUl0rArcEDHhfqE7qRE',
+    appId: '1:18003326107:web:22265f745da1378d1e423e',
+    messagingSenderId: '18003326107',
+    projectId: 'flutter-app-auth-57399',
+    authDomain: 'flutter-app-auth-57399.firebaseapp.com',
+    storageBucket: 'flutter-app-auth-57399.appspot.com',
+    measurementId: 'G-8SFYLM35YM',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDwHnEmeGwJMxKaMKTfPqi1zjMPQ0qvp24',
-    appId: '1:550746434079:android:cff8ae748754e549fc832a',
-    messagingSenderId: '550746434079',
-    projectId: 'flutter-app-firebas',
-    storageBucket: 'flutter-app-firebas.appspot.com',
+    apiKey: 'AIzaSyCk4H1pC9hZW669_uAeqosvYrhrbSB1-8k',
+    appId: '1:18003326107:android:f133a9d74495cac71e423e',
+    messagingSenderId: '18003326107',
+    projectId: 'flutter-app-auth-57399',
+    storageBucket: 'flutter-app-auth-57399.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD7Ztg_Y-Evn-4Q3LKLwSKBhw4Cl_JL2eQ',
-    appId: '1:550746434079:ios:58527569f537c731fc832a',
-    messagingSenderId: '550746434079',
-    projectId: 'flutter-app-firebas',
-    storageBucket: 'flutter-app-firebas.appspot.com',
-    iosClientId: '550746434079-4sgn5479qkpco64s4jcku5miqaph3os9.apps.googleusercontent.com',
+    apiKey: 'AIzaSyBGvPF3fEkGP308NVTusvsAXTPzZE3s3T4',
+    appId: '1:18003326107:ios:f348be14283d72331e423e',
+    messagingSenderId: '18003326107',
+    projectId: 'flutter-app-auth-57399',
+    storageBucket: 'flutter-app-auth-57399.appspot.com',
+    iosClientId: '18003326107-vg6bdo7isskf017aa7sgfof4o10rrq63.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterApp',
   );
 }
