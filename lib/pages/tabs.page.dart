@@ -8,7 +8,7 @@ class TabsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
-      body: TabBarView(
+      body: const TabBarView(
         children: [
           //HomeScreen(),
           LoginPage(),

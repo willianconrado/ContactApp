@@ -1,11 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/authentication/services/auth_service.dart';
-import 'package:flutter_app/authentication/component/show_snackbar.dart';
-import 'package:flutter_app/pages/home.page.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import '../authentication/component/show_snackbar.dart';
+import '../authentication/services/auth_service.dart';
+import 'home.page.dart';
+
 class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
+
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -62,14 +65,14 @@ class _LoginPageState extends State<LoginPage> {
                 child: TextButton(
                     child: Row(
                       children: <Widget>[
-                        Container(
+                        SizedBox(
                           height: 36,
                           width: 100,
                           child: Image.asset(
                             "assets/facebook.png",
                           ),
                         ),
-                        Text("Entrar com Facebook"),
+                        const Text("Entrar com Facebook"),
                       ],
                     ),
                     onPressed: () {}),
@@ -92,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: TextButton(
                   child: Row(
                     children: <Widget>[
-                      Container(
+                      SizedBox(
                         height: 36,
                         width: 100,
                         child: Image.asset(
@@ -106,8 +109,17 @@ class _LoginPageState extends State<LoginPage> {
                     UserCredential? userCredential = await signInWithGoogle();
                     if (userCredential != null) {
                       // Login bem-sucedido, navegue para a tela inicial
+                      //Navigator.push(context,
+                      //    MaterialPageRoute(builder: (context) => HomePage()));
                     } else {
                       // Login falhou
+                      // ignore: use_build_context_synchronously
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Falha no login. Tente novamente.'),
+                          duration: Duration(seconds: 2),
+                        ),
+                      );
                     }
                   },
                 ),
@@ -274,7 +286,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 child: TextButton(
                   onPressed: () {
-                    buttonSendClicked();                   
+                    buttonSendClicked();
                   },
                   child: Text((isEntering) ? "Entrar" : "Cadastrar"),
                 ),
@@ -285,15 +297,13 @@ class _LoginPageState extends State<LoginPage> {
                     isEntering = !isEntering;
                   });
                 },
-                child: Container(
-                  child: Text(
-                    (isEntering)
-                        ? "Ainda não tem conta?\nClique aqui para cadastrar."
-                        : "Já tem uma conta?\nClique aqui para entrar",
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+                child: Text(
+                  (isEntering)
+                      ? "Ainda não tem conta?\nClique aqui para cadastrar."
+                      : "Já tem uma conta?\nClique aqui para se entrar",
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
@@ -324,6 +334,9 @@ class _LoginPageState extends State<LoginPage> {
         .then((String? error) {
       if (error != null) {
         showSnackBar(context: context, message: error);
+      } else {
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => const HomePage()));
       }
     });
   }
@@ -335,7 +348,15 @@ class _LoginPageState extends State<LoginPage> {
         .then((String? error) {
       if (error != null) {
         showSnackBar(context: context, message: error);
+      } else {        
+        _setEnteringState(true);
       }
+    });
+  }
+
+  _setEnteringState(bool isEntering) {
+    setState(() {
+      this.isEntering = isEntering;
     });
   }
 
@@ -381,24 +402,20 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future<UserCredential?> signInWithGoogle() async {
-    // Inicie o fluxo de autenticação
     final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
 
     if (googleUser == null) {
       return null;
     }
 
-    // Obtenha os detalhes de autenticação da solicitação
     final GoogleSignInAuthentication googleAuth =
         await googleUser.authentication;
 
-    // Crie um novo credential
     final OAuthCredential credential = GoogleAuthProvider.credential(
       accessToken: googleAuth.accessToken,
       idToken: googleAuth.idToken,
     );
 
-    // Depois de fazer login, retorne o UserCredential
     return await _auth.signInWithCredential(credential);
   }
 }

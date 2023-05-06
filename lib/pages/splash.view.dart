@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/themes/dark.theme.dart';
 import 'package:rive/rive.dart';
-
 import 'login.page.dart';
 
 class SplashPage extends StatelessWidget {
@@ -10,12 +8,12 @@ class SplashPage extends StatelessWidget {
   Future delay(context) async {
     await Future.delayed(
         const Duration(
-          milliseconds: 10000,
+          milliseconds: 7000,
         ), () {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => LoginPage(),
+          builder: (context) => const LoginPage(),
         ),
       );
     });
@@ -51,10 +49,10 @@ class SplashPage extends StatelessWidget {
                     fontWeight: FontWeight.w300,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
-                FlutterLogo(
+                const FlutterLogo(
                   size: 150,
                   style: FlutterLogoStyle.horizontal,
                   textColor: Colors.blue,

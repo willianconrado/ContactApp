@@ -1,7 +1,4 @@
-import 'dart:math';
-
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 
 class AuthService {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -41,6 +38,8 @@ class AuthService {
       switch (e.code) {
         case "email-already-in-use":
           return "O e-mail já está em uso.";
+          case "weak-password":
+          return "Senha muito fraca.\nA senha deve conter pelo menos 6 dígitos.";
       }
       return e.code;
     }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 const brightness = Brightness.dark;
-const primaryColor =  Color(0xFF00C569);
-const lightColor =  Color(0xFFFFFFFF);
-const backgroundColor =  Color(0xFFF5F5F5);
+const primaryColor = Color(0xFF00C569);
+const lightColor = Color(0xFFFFFFFF);
+const backgroundColor = Color(0xFFF5F5F5);
 
 ThemeData darkTheme() {
   return ThemeData(
@@ -37,7 +37,7 @@ ThemeData darkTheme() {
     // primaryTextTheme:
     // sliderTheme:
     primaryColor: primaryColor,
-    accentColor: Colors.black26,
+    colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.black26),
     // fontFamily: 'Montserrat',
     // buttonColor: Color(0xFF00C569),
     // // scaffoldBackgroundColor: backgroundColor,

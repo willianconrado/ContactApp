@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Configs extends StatefulWidget {
-  
+  const Configs({Key? key}) : super(key: key);
 
   @override
   State<Configs> createState() => _ConfigsState();
@@ -17,39 +17,37 @@ class _ConfigsState extends State<Configs> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
         shadowColor: Colors.black12,
-        title: Text('Configurações'),
+        title: const Text('Configurações'),
       ),
       body: Column(
         children: [
-          Container(
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                const Text('Modo Escuro',
-                    textAlign: TextAlign.right,
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                    )),
-                Switch(
-                  value: isSwitched1,
-                  onChanged: (value) {
-                    setState(
-                      () {
-                        isSwitched1 = value;
-                        // print(isSwitched);
-                      },
-                    );
-                  },
-                  activeTrackColor: Colors.lightGreen,
-                  activeColor: Colors.green,
-                ),
-                
-              ],
-            ),
-          ),
+           Row(
+             mainAxisSize: MainAxisSize.max,
+             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+             children: <Widget>[
+               const Text('Modo Escuro',
+                   textAlign: TextAlign.right,
+                   style: TextStyle(
+                     fontSize: 20,
+                     fontWeight: FontWeight.w600,
+                     color: Colors.black,
+                   )),
+               Switch(
+                 value: isSwitched1,
+                 onChanged: (value) {
+                   setState(
+                     () {
+                       isSwitched1 = value;
+                       // print(isSwitched);
+                     },
+                   );
+                 },
+                 activeTrackColor: Colors.lightGreen,
+                 activeColor: Colors.green,
+               ),
+               
+             ],
+           ),
         ],
       ),
     );
